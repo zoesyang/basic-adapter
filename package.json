@@ -7,7 +7,8 @@
   "scripts": {
     "build": "rimraf lib && tsc",
     "lint": "eslint --ext .ts src/ test/",
-    "format": "npm run format:check -- --write",
+    "postinstall": "yarn run build",
+    "format": "yarn run format:check -- --write",
     "format:check": "prettier --check \"**/*.{md,json}\" \"{src,test}/**/*.ts\"",
     "test": "jest --forceExit"
   },
